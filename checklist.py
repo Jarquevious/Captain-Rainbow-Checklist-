@@ -39,14 +39,19 @@ def select(function_code):
 
     # READ ITEM
     elif function_code == "R":
-        item_index = user_input("Index Number?")
+        item_index = user_input("Index Number")
         read(int(item_index))
         return True
    
     # UPDATE ITEM
     elif function_code == "U":
-            item_index = user_input("Index Number?")
+            item_index = user_input("Index Number:")
             input_item = user_input("Edit item:")
+            return True
+
+    #DELETE ITEM
+    elif function_code == "D":
+            item_index = user_input("Index Number:")
             return True
 
     # PRINT ALL ITEMS
