@@ -1,44 +1,25 @@
-# CREATYE CHECKLIST
+# CREATE CHECKLIST
 checklist = list()
 
 
-# DEFINE FUNCTIONS
-
+# DEFINE FUNCTIONS:
 # CREATE
 def create(item):
     checklist.append(item)
 
 # READ
-
-
 def read(index):
     return checklist[index]
 
-
-# checklist = ['Blue', 'Orange']
-# checklist[1] = 'Cats'
-# print(checklist)
-
 # UPDATE
-
-
 def update(index, item):
     checklist[index] = item
 
-
-# checklist = []
-# checklist.pop(1)
-# print(checklist)
-
 # DESTROY
-
-
 def destroy(index):
     checklist.pop(index)
 
 # LIST ALL ITEMS
-
-
 def list_all_items():
     index = 0
     for list_item in checklist:
@@ -46,38 +27,43 @@ def list_all_items():
         index += 1
 
 # MARK COMPLETED
-
-
 def mark_completed(index):
     return (index, "√" + checklist[item])
 
 # SELECTION
-
-
 def select(function_code):
     if function_code == "C":
         input_item = user_input("Input item:")
         create(input_item)
+        return True
 
     # READ ITEM
     elif function_code == "R":
         item_index = user_input("Index Number?")
-        print(read(int(item_index)))
+        read(int(item_index))
+        return True
+   
+    # UPDATE ITEM
+    elif function_code == "U":
+            item_index = user_input("Index Number?")
+            input_item = user_input("Edit item:")
+            return True
 
-    # Print all items
+    # PRINT ALL ITEMS
     elif function_code == "P":
         list_all_items()
-
+        return True
+    
+    # QUIT GAME
     elif function_code == "Q":
         return False
 
-    # Catch all
+    # CATCH ALL
     else:
         print("Unknown Option")
+    return True
 
 # USER_INPUT
-
-
 def user_input(prompt):
     # the input function will display a message in the terminal and wait for user input.
     user_input = input(prompt)
